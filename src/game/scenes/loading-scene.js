@@ -73,3 +73,4 @@ export default class LoadingScene extends Phaser.Scene {
       this.scene.start("level-00")
     }
   }
+}
