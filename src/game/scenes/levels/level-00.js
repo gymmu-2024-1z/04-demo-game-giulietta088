@@ -36,5 +36,33 @@ export default class Level00 extends Phaser.Scene {
 
     // Erstellt den "Obstacles" Layer. Hier kann der Spieler nicht durchlaufen.
     map.createLayer("Obstacles", tiles, 0, 0)
+
+    // Erstelle einen Cursor um auf die Eingaben des Spielers zu reagieren.
+    this.cursor = this.input.keyboard.createCursorKeys()
+
+    // Erstelle das Spielerobjekt als rotes Rechteck.
+    this.player = this.add.rectangle(3 * 32, 3 * 32, 32, 32, 0xff0000)
+
+    // Stelle die Kamera so ein, dass sie dem Spieler folgt.
+    this.cameras.main.startFollow(this.player)
+  }
+  update() {
+    // Hole die teile left, right, up und down aus dem Cursor-Objekt
+    const { left, right, up, down } = this.cursor
+
+    // Wenn links gedrückt wird...
+    if (left.isDown) {
+      // Links wurde gedrückt, verschiebe den Spieler einen Pixel nach rechts.
+      this.player.x -= 1
+    }
+    if (right.isDown) {
+      this.player.x += 1
+    }
+    if (up.isDown) {
+      this.player.y -= 1
+    }
+    if (down.isDown) {
+      this.player.y += 1
+    }
   }
 }
