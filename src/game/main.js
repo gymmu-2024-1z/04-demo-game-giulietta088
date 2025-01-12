@@ -4,6 +4,7 @@ import Phaser from "phaser"
 // Hier können wir unsere eigenen Klassen importieren. Das ist die Datei die
 // Sie im letzten Beispiel geschrieben haben.
 import LoadingScene from "./scenes/loading-scene.js"
+import Level00 from "./scenes/levels/level-00.js"
 
 // Das hier ist die Konfiguration für das Spiel. Sie müssen nicht alle Teile
 // davon verstehen. Die meisten sind recht selbsterklärend.
@@ -16,7 +17,7 @@ const config = {
   width: 640, // Sollten möglichst vielfache von 32 sein, da unsere Tileset 32x32 Pixel gross sind.
   height: 480, // Gleich wie bei width.
   parent: "game-canvas", // Die ID von dem HTML-Element, in das das Spiel gezeichnet wird.
-  scene: [LoadingScene], // Die Szenen des Spiels, hier können noch weitere Szenen angehängt werden.
+  scene: [LoadingScene, Level00], // Die Szenen des Spiels, hier können noch weitere Szenen angehängt werden.
   physics: {
     default: "arcade", // Eine einfache Physik die auf kollisionen testen kann.
     arcade: {
