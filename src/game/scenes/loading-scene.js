@@ -70,7 +70,7 @@ export default class LoadingScene extends Phaser.Scene {
       // Die Leertaste wurde gedrückt, jetzt möchten wir eine neue Szene laden.
       // Das was wir hier übergeben, ist der Schlüssel/Name der Szene, so wie
       // es im Konstruktor angegeben wurde.
-      this.scene.start("level-00")
+      this.scene.start("level-01")
     }
   }
 }
